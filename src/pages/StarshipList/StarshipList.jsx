@@ -13,7 +13,6 @@ const StarshipList = (props) => {
   return ( 
     <>
       <div>
-        <h3>Class List</h3>
         <div className='icon-container'>
           {starships.map((starship) => (
             <Link to='/starship' state={{starship}} key={starship.index}>

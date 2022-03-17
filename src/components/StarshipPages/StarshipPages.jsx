@@ -14,12 +14,11 @@ useEffect(()=> {
   return ( 
     <>
       <div>
-        <h3>Starship Details</h3>
         {starshipDetails.name ?
           <>
             <p>NAME: {starshipDetails.name}</p>
             <p>MODEL: {starshipDetails.model}</p>
-            <p><a href='/starships'>RETURN</a></p>
+            <p><a href='/'>RETURN</a></p>
           </>
           :
           <>

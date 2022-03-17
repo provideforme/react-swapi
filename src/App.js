@@ -7,10 +7,9 @@ function App() {
 
   return (
     <>
-      <h1>this is our app</h1>
-      <a href='/starships'>Starship List</a>
+      <h1>Star Wars Starships</h1>
     <Routes>
-      <Route path='/starships' 
+      <Route path='/' 
       element={<StarshipList />}/>
       <Route path='/starship' 
       element={<StarshipPage />}/>
