@@ -1,12 +1,32 @@
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { getStarshipDetails } from '../../services/sw-api';
 
 const StarshipPage = (props) => {
+  const [starshipDetails, setStarshipDetails] = useState({})
+  let location = useLocation()
+  
+useEffect(()=> {
+  getStarshipDetails(location.state.starship.url)
+  .then(starshipDetails => setStarshipDetails (starshipDetails))
+}, [])
+
   return ( 
     <>
-      <Link to={`/starships/${props.starships.index}`}>
-        {props.starships.name}
-      </Link>
-      <br />
+      <div>
+        <h3>Starship Details</h3>
+        {starshipDetails.name ?
+          <>
+            <p>NAME: {starshipDetails.name}</p>
+            <p>MODEL: {starshipDetails.model}</p>
+            <p><a href='/starships'>RETURN</a></p>
+          </>
+          :
+          <>
+            <h2>Loading starship details...</h2>
+          </>
+        }
+      </div>
     </>
   );
 }
