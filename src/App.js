@@ -7,13 +7,13 @@ function App() {
 
   return (
     <>
-      <h1>Star Wars Starships</h1>
-    <Routes>
-      <Route path='/' 
-      element={<StarshipList />}/>
-      <Route path='/starship' 
-      element={<StarshipPage />}/>
-    </Routes>
+      <div className='header'>STAR WARS STARSHIPS</div>
+      <Routes>
+        <Route path='/' 
+        element={<StarshipList />}/>
+        <Route path='/starship' 
+        element={<StarshipPage />}/>
+      </Routes>
     </>
   );
 }
